@@ -1,0 +1,150 @@
+							-> Maven			
+What is Maven?
+Maven is a project management and comprehension tool that provides developers a complete build lifecycle framework. Development team can automate the project's build infrastructure in almost no time as Maven uses a standard directory layout and a default build lifecycle.
+
+In case of multiple development teams environment, Maven can set-up the way to work as per standards in a very short time. As most of the project setups are simple and reusable, Maven makes life of developer easy while creating reports, checks, build and testing automation setups.
+
+Maven provides developers ways to manage the following −
+
+Builds
+Documentation
+Reporting
+Dependencies
+SCMs
+Releases
+Distribution
+Mailing list
+
+
+
+Difference between Ant and Maven
+Ant and Maven both are build tools provided by Apache. The main purpose of these technologies is to ease the build process of a project.
+
+There are many differences between ant and maven that are given below:
+
+> Ant doesn't has formal conventions, so we need to provide information of the project structure in build.xml file.
+> Maven has a convention to place source code, compiled code etc. 
+> So we don't need to provide information about the project structure in pom.xml file.
+> Ant is procedural, you need to provide information about what to do and when to do through code.
+> You need to provide order.	
+> Maven is declarative, everything you define in the pom.xml file.
+> There is no life cycle in Ant.								
+> There is life cycle in Maven.
+> It is a tool box.									
+> It is a framework.
+> It is mainly a build tool.										
+> It is mainly a project management tool.
+> The ant scripts are not reusable.										
+> The maven plugins are reusable.
+> It is less preferred than Maven.											
+> It is more preferred than Ant.
+
+
+1) Maven Local Repository
+Maven local repository is located in your local system. It is created by the maven when you run any maven command.
+
+By default, maven local repository is %USER_HOME%/.m2 directory. For example: C:\Users\SSS IT\.m2.
+
+maven local repository
+Update location of Local Repository
+We can change the location of maven local repository by changing the settings.xml file. It is located in MAVEN_HOME/conf/settings.xml, for example: E:\apache-maven-3.1.1\conf\settings.xml.
+
+Let's see the default code of settings.xml file.
+
+ 
+Now change the path to local repository. After changing the path of local repository, it will look like this:
+
+2) Maven Central Repository
+Maven central repository is located on the web. It has been created by the apache maven community itself.
+
+
+
+The central repository contains a lot of common libraries that can be viewed by this url.
+
+3) Maven Remote Repository
+Maven remote repository is located on the web. Most of libraries can be missing from the central repository such as JBoss library etc, so we need to define remote repository in pom.xml file.
+
+Let's see the code to add the jUnit library in pom.xml file.
+
+
+1.Maven pom.xml file
+POM is an acronym for Project Object Model. The pom.xml file contains information of project and configuration information for the maven to build the project such as dependencies, build directory, source directory, test source directory, plugin, goals etc.
+
+Maven reads the pom.xml file, then executes the goal.
+
+Before maven 2, it was named as project.xml file. But, since maven 2 (also in maven 3), it is renamed as pom.xml.
+Maven pom.xml file
+POM is an acronym for Project Object Model. The pom.xml file contains information of project and configuration information for the maven to build the project such as dependencies, build directory, source directory, test source directory, plugin, goals etc.
+
+Maven reads the pom.xml file, then executes the goal.
+
+Before maven 2, it was named as project.xml file. But, since maven 2 (also in maven 3), it is renamed as pom.xml.
+Features of Maven
+Simple project setup that follows best practices.
+
+Consistent usage across all projects.
+
+Dependency management including automatic updating.
+
+A large and growing repository of libraries.
+
+Extensible, with the ability to easily write plugins in Java or scripting languages.
+
+Instant access to new features with little or no extra configuration.
+
+Model-based builds − Maven is able to build any number of projects into predefined output types such as jar, war, metadata.
+
+Coherent site of project information − Using the same metadata as per the build process, maven is able to generate a website and a PDF including complete documentation.
+
+Release management and distribution publication − Without additional configuration, maven will integrate with your source control system such as CVS and manages the release of a project.
+
+Backward Compatibility − You can easily port the multiple modules of a project into Maven 3 from older versions of Maven. It can support the older versions also.
+
+Automatic parent versioning − No need to specify the parent in the sub module for maintenance.
+
+Parallel builds − It analyzes the project dependency graph and enables you to build schedule modules in parallel. Using this, you can achieve the performance improvements of 20-50%.
+
+Better Error and Integrity Reporting − Maven improved error reporting, and it provides you with a link to the Maven wiki page where you will get full description of the error.
+
+POM stands for Project Object Model. It is fundamental unit of work in Maven. It is an XML file that resides in the base directory of the project as pom.xml.
+
+The POM contains information about the project and various configuration detail used by Maven to build the project(s).
+
+POM also contains the goals and plugins. While executing a task or goal, Maven looks for the POM in the current directory. It reads the POM, gets the needed configuration information, and then executes the goal. Some of the configuration that can be specified in the POM are following −
+
+project dependencies.
+plugins.
+goals.
+build profiles
+project version
+developers
+mailing list
+Before creating a POM, we should first decide the project group (groupId), its name (artifactId) and its version as these attributes help in uniquely identifying the project in repository.
+1	
+Project root
+
+This is project root tag. You need to specify the basic schema settings such as apache schema and w3.org specification.
+
+2	
+Model version
+
+Model version should be 4.0.0.
+
+3	
+groupId
+
+This is an Id of project's group. This is generally unique amongst an organization or a project. For example, a banking group com.company.bank has all bank related projects.
+
+4	
+artifactId
+
+This is an Id of the project. This is generally name of the project. For example, consumer-banking. Along with the groupId, the artifactId defines the artifact's location within the repository.
+
+5	
+version
+
+This is the version of the project. Along with the groupId, It is used within an artifact's repository to separate versions from each other. For example −
+
+com.company.bank:consumer-banking:1.0
+
+com.company.bank:consumer-banking:1.1.
